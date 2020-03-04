@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>The Computers--</title>
+</head>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="PaginaInicial.css">
+
+
+<body>
+
+<div class="navbar">
+	<a href="#" ><i class="fa fa-plus-circle fa-lg"></i></a>
+	<a href="#" >
+		<form>
+			<input type="text" name="search" placeholder="Search..">
+		</form>
+	</a>
+	<div class="dropdown">
+	<button class="dropbtn" onclick="myFunction()">...
+		<i class="fa fa-caret-down"></i>
+	</button>
+	<div class="dropdown-content" id="myDropdown">
+		<a href="#">Link 1</a>
+		<a href="#">Link 2</a>
+		<a href="#">Link 3</a>
+	</div>
+	</div>
+	<h3 class="titulo">BANANA --</h3>
+</div>
+<section>
+        <div style="display: flex; flex-direction: column">
+            <button onclick="location.href='#'">
+				<div>
+					<p>Fulano 1</p>
+					<p>Ultima Mensagem...</p>
+				</div>
+			</button>
+			<button onclick="location.href='#'">
+				<div>
+					<p>Fulano 2</p>
+					<p>Ultima Mensagem...</p>
+				</div>
+			</button>
+			<button onclick="location.href='#'">
+				<div>
+					<p>Fulano 3</p>
+					<p>Ultima Mensagem...</p>
+				</div>
+			</button>
+        </div>
+</section>
+
+<script>
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function(e) {
+  if (!e.target.matches('.dropbtn')) {
+  var myDropdown = document.getElementById("myDropdown");
+    if (myDropdown.classList.contains('show')) {
+      myDropdown.classList.remove('show');
+    }
+  }
+}
+</script>
+</body>
