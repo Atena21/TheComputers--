@@ -23,6 +23,7 @@ input[type=text] {
   }
 
   h3.titulo {
+    text-align: center;
     display: inline-block;
     color: rgb(43, 138, 201);
   }
@@ -30,12 +31,14 @@ input[type=text] {
   .navbar {
     text-align: center;
     overflow: hidden;
-    background-color: #333;
+    /* background-color: #333; */
+    background-color: rgba(90, 2, 56, 0.856);
     font-family: Arial, Helvetica, sans-serif;
   }
   
   .navbar a {
     float: left;
+    /* align-self: flex-start; */
     font-size: 16px;
     color: white;
     text-align: center;
@@ -52,7 +55,7 @@ input[type=text] {
   
   .dropdown .dropbtn {
     cursor: pointer;
-    font-size: 16px;  
+    font-size: 16px; 
     border: none;
     outline: none;
     color: white;
@@ -60,6 +63,11 @@ input[type=text] {
     background-color: inherit;
     font-family: inherit;
     margin: 0;
+  }
+
+  div.chats {
+    display: flex;
+    flex-direction: column;
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
