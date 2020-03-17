@@ -18,6 +18,38 @@ input[type=text] {
     width: 100%;
   }
 
+  .limiter {
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .container-initialPage {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* align-items: center; */
+    padding: 10px;
+    
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;;
+  }
+  
+  
+  .wrap-initialPage {
+    padding: 1px 1px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 10px;
+    position: relative;
+  }
+
   html {
     box-sizing: border-box;
   }
@@ -25,16 +57,62 @@ input[type=text] {
   h3.titulo {
     text-align: center;
     display: inline-block;
-    color: rgb(43, 138, 201);
+    color: #00dadea9;
   }
 
   .navbar {
+    /* p-l-110 p-r-110 p-t-62 p-b-33 */
+    /* padding-left: 110px;
+    padding-right: 110px;
+    padding-top: 62px;
+    padding-bottom: 33px; */
+    border-radius: 10px;
     text-align: center;
     overflow: hidden;
     /* background-color: #333; */
-    background-color: rgba(90, 2, 56, 0.856);
+    background-color: rgba(0, 0, 0, 0.774);
     font-family: Arial, Helvetica, sans-serif;
   }
+  
+  .person {
+    text-align: center;
+    /* padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%; */
+  }
+
+  a {
+    text-decoration: none;
+    margin: 0 10px; 
+  }
+
+  .btnDiv {
+    text-align: center;
+    padding: 2px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+  }
+
+  a.btn {
+    text-align: center;
+    display: inline-block;
+    color: #666;
+    background-color: white;
+    letter-spacing: 2px;
+    /* font-size: 12px; */
+    padding: 10px 30px;
+    border-radius: 5px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border: 1px solid rgba(0,0,0,0.3);
+    border-bottom-width: 3px;
+    width: 100%;
+  }
+  
+    a.btn:hover {
+      background-color: #e3e3e3;
+      border-color: rgba(0,0,0,0.5);
+    }
   
   .navbar a {
     float: left;
@@ -68,12 +146,13 @@ input[type=text] {
   div.chats {
     display: flex;
     flex-direction: column;
+    padding: 12px 40px 12px 40px;
   }
   
   .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: rgb(43, 138, 201);
+    background-color: #00dadea9;
   }
-  
+
   .dropdown-content {
     display: none;
     position: absolute;

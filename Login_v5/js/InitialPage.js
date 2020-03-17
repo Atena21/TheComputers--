@@ -14,23 +14,27 @@ window.onclick = function(e) {
     }
 }
 
-// var convArray = ["a", "b", "c", "d", "e", "f"];
 
 function loadArray(){
     var person1 = {name: "Sarah", lastMessage: "Oi"}
-    var array = [person1, "slide 2", "slide 3", "slide 4", "slide 5"];
+    var person2 = {name: "Ale", lastMessage: "Hey!"}
+    var array = [person1, person2, "slide 3", "slide 4", "slide 5"];
 
     array.forEach(function(item) {
-    var button = document.createElement("button");
-    console.log(button);
+    var buttonDiv = document.createElement("div");
+    buttonDiv.classList.add("btnDiv");
+    var button = document.createElement("a");
+    // console.log(button);
     var text = document.createTextNode(item.name);
     var br = document.createElement("br");
     var lastMessage = document.createTextNode(item.lastMessage);
-    button.onclick = "location.href='./Login.html'";
+    button.href = "./index.html";
     button.appendChild(text);
     button.appendChild(br);
     button.appendChild(lastMessage);
-    document.getElementById("chats").appendChild(button);
-    console.log("Banana");
+    button.classList.add("btn");
+    buttonDiv.appendChild(button);
+    document.getElementById("chats").appendChild(buttonDiv);
+    // console.log("Banana");
     });
 }

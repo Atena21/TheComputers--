@@ -183,7 +183,7 @@ iframe {
 
 
 .wrap-login100 {
-  width: 680px;
+  width: 6800px;
   background: #fff;
   border-radius: 10px;
   position: relative;
@@ -209,7 +209,7 @@ iframe {
 
 /*------------------------------------------------------------------
 [ Button sign in with ]*/
-.btn-face,
+/* .btn-face,
 .btn-google {
   font-family: Montserrat-SemiBold;
   font-size: 18px;
@@ -292,7 +292,7 @@ iframe {
 .btn-face:hover,
 .btn-google:hover {
   color: #fff;
-}
+} */
 
 
 /*------------------------------------------------------------------
