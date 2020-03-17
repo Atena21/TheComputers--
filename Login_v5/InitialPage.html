@@ -1,40 +1,43 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<title>The Computers--</title>
+	<title>The Computers--</title>
 </head>
 
-<script src = "./js/InitialPage.js"></script>
+<script src="./js/InitialPage.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="./css/InitialPage.css">
 
-
 <body>
 
-<div class="navbar">
-	<h3 class="titulo">BANANA --</h3>
-	<a href="#" ><i class="fa fa-plus-circle fa-lg"></i></a>
-	<a href="#" >
-		<form>
-			<input type="text" name="search" placeholder="Search..">
-		</form>
-	</a>
-	<div class="dropdown">
-		<button class="dropbtn" onclick="myFunction()">...
-			<i class="fa fa-caret-down"></i>
-		</button>
-		<div class="dropdown-content" id="myDropdown">
-			<a href="#">Link 1</a>
-			<a href="#">Link 2</a>
-			<a href="#">Link 3</a>
+	<div class="navbar">
+		<h3 class="titulo">BANANA --</h3>
+		<a href="./Search.html"><i class="fa fa-plus-circle fa-lg"></i></a>
+		<a href="#">
+			<form>
+				<input type="text" name="search" placeholder="Search..">
+			</form>
+		</a>
+		<div class="dropdown">			
+			<!-- <button class="dropbtn">
+				<i class="fa fa-caret-down"></i>
+			</button> -->
+			<button class="dropbtn" onclick="myFunction()">
+				<i class="fa fa-ellipsis-v"></i>
+			</button>
+			<div class="dropdown-content" id="myDropdown">
+				<a href="#">Link 1</a>
+				<a href="#">Link 2</a>
+				<a href="#">Link 3</a>
+			</div>
 		</div>
+		<!-- <h3 class="titulo">BANANA --</h3> -->
 	</div>
-	<!-- <h3 class="titulo">BANANA --</h3> -->
-</div>
-<section>
-        <div class="chats" id="chats">
-            <!-- <button onclick="location.href='#'">
+	<section>
+		<div class="chats" id="chats">
+			<!-- <button onclick="location.href='#'">
 				<div>
 					<p>Fulano 1</p>
 					<p>Ultima Mensagem...</p>
@@ -54,10 +57,10 @@
 			</button> -->
 			<!-- <ul id="myUl"></ul> -->
 			<script>loadArray()</script>
-        </div>
-</section>
+		</div>
+	</section>
 
-<!-- <script>
+	<!-- <script>
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 function myFunction() {

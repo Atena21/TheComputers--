@@ -21,16 +21,16 @@ function loadArray(){
     var array = [person1, "slide 2", "slide 3", "slide 4", "slide 5"];
 
     array.forEach(function(item) {
-    var button = document.createElement("button");
-    console.log(button);
-    var text = document.createTextNode(item.name);
-    var br = document.createElement("br");
-    var lastMessage = document.createTextNode(item.lastMessage);
-    button.onclick = "location.href='./Login.html'";
-    button.appendChild(text);
-    button.appendChild(br);
-    button.appendChild(lastMessage);
-    document.getElementById("chats").appendChild(button);
-    console.log("Banana");
+        var button = document.createElement("button");
+        // console.log(button);
+        var name = document.createTextNode(item.name);
+        var br = document.createElement("br");
+        var lastMessage = document.createTextNode(item.lastMessage);
+        button.onclick = "location.href='index.html'";  //not working
+        button.appendChild(name);
+        button.appendChild(br);
+        button.appendChild(lastMessage);
+        document.getElementById("chats").appendChild(button);
+        // console.log("Banana");
     });
 }
