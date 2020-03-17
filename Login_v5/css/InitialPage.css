@@ -57,7 +57,7 @@ input[type=text] {
   h3.titulo {
     text-align: center;
     display: inline-block;
-    color: #00dadea9;
+    color: white;
   }
 
   .navbar {
@@ -114,17 +114,17 @@ input[type=text] {
       border-color: rgba(0,0,0,0.5);
     }
   
-  .navbar a {
-    float: left;
+  /* .navbar a { */
+    /* float: left; */
     /* align-self: flex-start; */
-    font-size: 16px;
-    color: white;
-    text-align: center;
-    height: fit-content;
-    padding: 14px 16px;
+    /* font-size: 16px; */
+    /* color: white; */
+    /* text-align: center; */
+    /* height: fit-content; */
+    /* padding: 14px 16px; */
     /* padding: 12px 20px 12px 40px; */
-    text-decoration: none;
-  }
+    /* text-decoration: none; */
+  /* } */
   
   .dropdown {
     float: right;
@@ -148,10 +148,62 @@ input[type=text] {
     flex-direction: column;
     padding: 12px 40px 12px 40px;
   }
-  
-  .navbar a:hover, .dropdown:hover .dropbtn, .dropbtn:focus {
-    background-color: #00dadea9;
-  }
+
+  a.nav, .dropdown .dropbtn{
+  float: left;
+  font-size: 16px;
+  color: white;
+  height: fit-content;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  height: 60px;
+  border-radius: 10px;
+
+  font-family: Poppins-Medium;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+}
+
+a.nav::before, .dropdown .dropbtn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  top: 0;
+  left: 0;
+  background: #a64bf4;
+  background: -webkit-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -o-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: -moz-linear-gradient(45deg, #00dbde, #fc00ff);
+  background: linear-gradient(45deg, #00dbde, #fc00ff);
+  opacity: 0;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+a.nav:hover:before, .dropdown .dropbtn:hover:before {
+  opacity: 1;
+}
 
   .dropdown-content {
     display: none;
@@ -185,8 +237,8 @@ input[type=text] {
     flex-direction: column;
   }
   
-  .navbar a:hover, .dropdown:hover {
+  /* .navbar a:hover, .dropdown:hover {
     background-color: rgb(43, 138, 201);
-  }
+  } */
   
   
