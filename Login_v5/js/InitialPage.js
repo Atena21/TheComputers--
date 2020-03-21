@@ -25,11 +25,11 @@ function loadArray(){
     buttonDiv.classList.add("btnDiv");
     var button = document.createElement("a");
     // console.log(button);
-    var text = document.createTextNode(item.name);
+    var name = document.createTextNode(item.name);
     var br = document.createElement("br");
     var lastMessage = document.createTextNode(item.lastMessage);
     button.href = "./index.html";
-    button.appendChild(text);
+    button.appendChild(name);
     button.appendChild(br);
     button.appendChild(lastMessage);
     button.classList.add("btn");
