@@ -120,6 +120,7 @@
     border: 1px solid rgba(0,0,0,0.3);
     border-bottom-width: 3px;
     width: fit-content;
+    max-width: 80%;
   }
 
   div.chats {
@@ -137,11 +138,11 @@
     -webkit-border-radius: 5px;
     border-bottom-width: 3px;
     width: auto;
+    max-width: 100%;
   }
 
   .other {
     text-align: right;
-    display: inline-block;
     letter-spacing: 2px;
     padding: 10px 20px;
     border-radius: 5px;
@@ -149,6 +150,7 @@
     -webkit-border-radius: 5px;
     border-bottom-width: 3px;
     width: auto;
+    max-width: 100%;
   }
 
   

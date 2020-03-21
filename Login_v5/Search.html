@@ -10,31 +10,37 @@
     <link rel="stylesheet" href="./css/Search.css">
 
     <body>
-        <div class='navbar'>
-            <a href="./InitialPage.html"><i class="fa fa-arrow-left"></i></a>
-            <a href="#">
-                <form>
-                    <input type="text" name="search" placeholder="Search..">
-                </form>
-            </a>
-            
-            <div class="dropdown">
-                <button class="dropbtn" onclick="myFunction()">
-                    <i class="fa fa-ellipsis-v"></i>
-                </button>
-                <div class="dropdown-content" id="myDropdown">
-                    <a href="#">Link 1</a>
-                    <a href="#">Link 2</a>
-                    <a href="#">Link 3</a>
+        <div class="limiter">
+            <div class="container-initialPage" style="background-image: url('images/bg-01.jpg');">
+                <div class="wrap-initialPage p-l-110 p-r-110 p-t-62 p-b-33">
+                    <div class='navbar'>
+                        <a href="./InitialPage.html"><i class="fa fa-arrow-left"></i></a>
+                        <a href="#">
+                            <form>
+                                <input type="text" name="search" placeholder="Search..">
+                            </form>
+                        </a>
+                        
+                        <div class="dropdown">
+                            <button class="dropbtn" onclick="myFunction()">
+                                <i class="fa fa-ellipsis-v"></i>
+                            </button>
+                            <div class="dropdown-content" id="myDropdown">
+                                <a href="#">Atualizar Senha</a>
+                                <a href="./index.html">Logout</a>
+                                <a href="#">Deletar Conta</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <section>
+                        <div class="contacts" id="contacts"> 
+                            <script>loadArray()</script>
+                        </div>
+                    </section>
                 </div>
             </div>
         </div>
-
-        <section>
-            <div class="contacts" id="contacts"> 
-                <script>loadArray()</script>
-            </div>
-        </section>
     </body>
 
 </html>

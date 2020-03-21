@@ -1,6 +1,6 @@
 function loadArray(){
     var text1 = {user : "me", message: "oiiiiiiii"};
-    var text2 = {user : "other", message: "olaaaaaaaaaaaaaaa"};
+    var text2 = {user : "other", message: "Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola "};
     var array = [text1, text2, text1, text2];
 
     array.forEach(function(item) {

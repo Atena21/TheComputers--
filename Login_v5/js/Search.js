@@ -20,10 +20,13 @@ function loadArray(){
     var array = [person1, person2, person3];
 
     array.forEach(function(item) {
-        var button = document.createElement("button");
+        var buttonDiv = document.createElement("div");
+        buttonDiv.classList.add("btnDiv");
+        var button = document.createElement("a");
         var name = document.createTextNode(item);
-        button.onclick = "location.href='index.html'";  //not working
         button.appendChild(name);
-        document.getElementById("contacts").appendChild(button);
+        button.classList.add("btn")
+        buttonDiv.appendChild(button)
+        document.getElementById("contacts").appendChild(buttonDiv);
     });
 }
