@@ -5,12 +5,13 @@ function loadArray(){
     var array = [text1, text2, text3, text1];
 
     array.forEach(function(item) {
+    var mdiv = document.createElement("div");
     var div = document.createElement("div");
     if(item.user == "me"){
-        div.classList.add("me");
+        mdiv.classList.add("me");
     }
     else{
-        div.classList.add("other");
+        mdiv.classList.add("other");
         var user = document.createTextNode(item.user);
         var br = document.createElement("br");
         div.appendChild(user);
@@ -18,6 +19,9 @@ function loadArray(){
     }
     var message = document.createTextNode(item.message);
     div.appendChild(message);
-    document.getElementById("chats").appendChild(div);
+    div.classList.add("div");
+    mdiv.appendChild(div);
+    mdiv.cli
+    document.getElementById("chats").appendChild(mdiv);
    });
 }
