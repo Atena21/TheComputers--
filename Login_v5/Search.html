@@ -8,14 +8,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="./css/Search.css">
+    <link rel="stylesheet" href="./css/util.css">
 
     <body>
         <div class="limiter">
             <div class="container-initialPage" style="background-image: url('images/bg-01.jpg');">
-                <div class="wrap-initialPage p-l-110 p-r-110 p-t-62 p-b-33">
+                <div class="wrap-initialPage">
                     <div class='navbar'>
-                        <a href="./InitialPage.html"><i class="fa fa-arrow-left"></i></a>
-                        <a href="#">
+                        <a href="./InitialPage.html" class="nav1">
+                            <i class="fa fa-arrow-left"></i></a>
+                        <a href="#" class="nav2">
                             <form>
                                 <input type="text" name="search" placeholder="Search..">
                             </form>
@@ -34,9 +36,11 @@
                     </div>
 
                     <section>
-                        <div class="contacts" id="contacts"> 
-                            <script>loadArray()</script>
-                        </div>
+                        <div class="container-contacts">
+                            <section class="wrap-contacts" id="contacts"> 
+                                <script>loadArray()</script>
+                            </section>
+                        </div>                        
                     </section>
                 </div>
             </div>

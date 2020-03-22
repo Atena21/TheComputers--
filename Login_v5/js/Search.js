@@ -23,10 +23,13 @@ function loadArray(){
         var buttonDiv = document.createElement("div");
         buttonDiv.classList.add("btnDiv");
         var button = document.createElement("a");
+        button.classList.add("btn");
+        var text = document.createElement("span");
+        text.classList.add("text1");
         var name = document.createTextNode(item);
-        button.appendChild(name);
-        button.classList.add("btn")
-        buttonDiv.appendChild(button)
+        text.appendChild(name);
+        button.appendChild(text);
+        buttonDiv.appendChild(button);
         document.getElementById("contacts").appendChild(buttonDiv);
     });
 }
