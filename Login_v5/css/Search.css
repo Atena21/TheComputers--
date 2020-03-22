@@ -67,10 +67,15 @@ a {
 
 .btnDiv {
   text-align: center;
-  width: 100%;
+  width: 99%;
   height: 60px;
   background-color: white;
   align-items: center;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 5px;
 }
 
 .checkbox{
