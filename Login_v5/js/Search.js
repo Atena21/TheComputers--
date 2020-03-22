@@ -22,10 +22,13 @@ function loadArray(){
     array.forEach(function(item) {
         var buttonDiv = document.createElement("div");
         buttonDiv.classList.add("btnDiv");
+        var checkbox = document.createElement("input");
+        checkbox.setAttribute("type","checkbox");
+        checkbox.classList.add("checkbox")
+        buttonDiv.appendChild(checkbox);
         var button = document.createElement("a");
         button.classList.add("btn");
         var text = document.createElement("span");
-        text.classList.add("text1");
         var name = document.createTextNode(item);
         text.appendChild(name);
         button.appendChild(text);

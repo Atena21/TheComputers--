@@ -42,7 +42,7 @@ input[type=text] {
   width: 100%;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;
-  position: relative;
+  position: relative; 
 }
 
 html {
@@ -68,7 +68,13 @@ a {
   text-align: center;
   width: 100%;
   height: 60px;
-  background-color: rgba(255, 255, 255, 0);
+  background-color: white;
+  align-items: center;
+}
+
+.checkbox{
+  float:left;
+  margin: 20px 30px;
 }
 
 a.btn {
@@ -82,7 +88,6 @@ a.btn {
   border-radius: 5px;
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
-  width: 100%;
   height: 100%;
   margin: 0;
   align-items: center;
@@ -180,30 +185,30 @@ form{
   width: 100%;
 }
 a.nav2{
-  width: 75%;
+  width: 77%;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
-    right: 0;
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+  right: 0;
 }  
 
 .show {
-    display: block;
+  display: block;
 }
 
 .dropdown-content a {
-    float: none;
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 .dropdown-content a:hover {
@@ -224,8 +229,7 @@ div.contacts {
 }
 
 .container-contacts{
-  width: 100%;  
-  min-height: 100vh;
+  width: 100%;
   display: -webkit-box;
   display: -webkit-flex;
   display: -moz-box;
@@ -237,10 +241,25 @@ div.contacts {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+
+  max-height: 77vh;
+  overflow: auto;
 }
 
 .wrap-contacts{
   width: 100%;
   border-radius: 10px;
-  position: relative;
+}
+
+.footer{
+  width: 100%;
+  height: 60px;
+  position: absolute;
+  bottom: 1%;
+}
+
+a.send{
+  position: absolute;
+  right: 1.3%;
+  bottom: 2%;
 }
