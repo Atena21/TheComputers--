@@ -58,6 +58,8 @@ h3.titulo {
   text-align: center;
   display: inline-block;
   color: white;
+  position: absolute;
+  left: 45%;
 }
 
 .navbar {
