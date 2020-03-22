@@ -63,9 +63,9 @@ a:hover {
 }
 
 /*---------------------------------------------*/
-h1,h2,h3,h4,h5,h6 {
+/* h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
-}
+} */
 
 p {
 	font-family: Poppins-Regular;
@@ -513,6 +513,7 @@ iframe {
     padding-left: 60px;
     padding-right: 60px;
   }
+}
 
 @media (max-width: 576px) {
   .wrap-login100 {
