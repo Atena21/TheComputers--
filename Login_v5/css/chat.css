@@ -219,4 +219,8 @@
     max-width: 100%;
   }
 
+  .message {
+    resize: none;
+  }
+
   
