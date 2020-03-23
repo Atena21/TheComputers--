@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>The Computers--</title>
+    <title>The Computers --</title>
 
     <script src = "./js/group.js"></script>
     
@@ -14,8 +14,9 @@
 		<div class="container-initialPage" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-initialPage p-l-110 p-r-110 p-t-62 p-b-33">
                 <div class="navbar">
-                    <h3 class="titulo">Fulano 1</h3>
-                    <a href="./Search.html" ><i class="fa fa-arrow-left"></i></a>
+                    <h3 class="titulo">User 2, User 3</h3>
+                    <a href="./Search.html" class="nav1">
+                        <i class="fa fa-arrow-left"></i></a>
                 </div>
 
                 <section>
@@ -25,10 +26,10 @@
                 </section>
 
                 <footer>
-                    <form class = "newMessage">
-                        <input type="text" name="newMessage" placeholder="New message...">
-                        <a href="#" ><i class="fa fa-arrow-right"></i></a>
-                    </form>
+		            <form class = "newMessage">
+                        <textarea type="text" rows="2" name="newMessage" placeholder="New message..."></textarea>
+                        <a class="send nav" href="#" ><button class="fa fa-arrow-circle-right fa-3x" onclick="document.getElementById('text').setAttribute ('placeholder', 'New message...');"></button></a>
+		            </form>
                 </footer>
             </div>
         </div>

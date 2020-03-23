@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <head>
-    <title>The Computers--</title>
+    <title>The Computers --</title>
 
     <script src = "./js/chat.js"></script>
     
@@ -25,8 +25,8 @@
 
                 <footer>
 		            <form class = "newMessage">
-                        <textarea type="text" rows="2" name="newMessage" placeholder="New message..."></textarea>
-                        <a class="send nav" href="#" ><i class="fa fa-arrow-circle-right fa-3x"></i></a>
+                        <textarea class="message" type="text" rows="2" name="newMessage" placeholder="New message..." id = "text"></textarea>
+                        <a class="send nav" href="#" ><i class="fa fa-arrow-circle-right fa-3x" onclick="document.getElementById('text').setAttribute ('placeholder', 'New message...');"></i></a>
 		            </form>
                 </footer>
             </div>
