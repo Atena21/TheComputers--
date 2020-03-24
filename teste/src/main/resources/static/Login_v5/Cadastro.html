@@ -3,6 +3,9 @@
 <head>
 	<title>TheComputers --</title>
 	<meta charset="UTF-8">
+
+	<script src = "./js/Cadastro.js"></script>
+
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
 	<link rel="icon" type="image/png" href="images/icons/favicon.ico"/>
@@ -31,7 +34,7 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('images/bg-01.jpg');">
 			<div class="wrap-login100 p-l-110 p-r-110 p-t-62 p-b-33">
-				<form class="login100-form validate-form flex-sb flex-w" action="./InitialPage.html" method="post">
+				<form class="login100-form validate-form flex-sb flex-w" action="./InitialPage.html" method="post" onsubmit="return PasswordEqual()" name = "form">
 					<span class="login100-form-title p-b-53">
 						TheComputers --
 					</span>
@@ -54,8 +57,8 @@
 							</span>
 			
 						</div>
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<input class="input100" type="password" name="pass" required oninvalid="setCustomValidity('Password is required')" oninput="try{setCustomValidity('')}catch(e){}">
+						<div class="wrap-input100 validate-input" data-validate = "Password is required" id="pas1">
+							<input class="input100" type="password" name="pass1" required oninvalid="setCustomValidity('Password is required')" oninput="try{setCustomValidity('')}catch(e){}">
 							<span class="focus-input100"></span>
 						</div><br>
 
@@ -65,10 +68,12 @@
 							</span>
 				
 						</div>
-						<div class="wrap-input100 validate-input" data-validate = "Password is required">
-							<input class="input100" type="password" name="pass" required oninvalid="setCustomValidity('Password is required')" oninput="try{setCustomValidity('')}catch(e){}">
+						<div class="wrap-input100 validate-input" data-validate = "Password is required" id="pas2">
+							<input class="input100" type="password" name="pass2" required oninvalid="setCustomValidity('Password is required')" oninput="try{setCustomValidity('')}catch(e){}">
 							<span class="focus-input100"></span>
 						</div>
+
+						<div id = "erro"></div>
 
 						<br><br>
 
