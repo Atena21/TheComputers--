@@ -12,26 +12,25 @@
 <body>
     <div class="limiter">
 		<div class="container-initialPage" style="background-image: url('images/bg-01.jpg');">
-			<div class="wrap-initialPage p-l-110 p-r-110 p-t-62 p-b-33">
-                <div class="navbar">
-                    <h3 class="titulo">User 2, User 3</h3>
-                    <a href="./Search.html" class="nav1">
-                        <i class="fa fa-arrow-left"></i></a>
-                </div>
+            <div class="navbar">
+                <h3 class="titulo">User 2, User 3</h3>
+                <a href="./Search.html" class="nav1">
+                    <i class="fa fa-arrow-left"></i></a>
+            </div>
+            <div class="wrap-initialPage p-l-110 p-r-110 p-t-62 p-b-33">
 
                 <section>
                     <div id = "chats" class = "chats">
-                        <script>loadArray()</script>
+                        <script>loadArray(array_original)</script>
                     </div>
                 </section>
-
-                <footer>
-		            <form class = "newMessage">
-                        <textarea type="text" rows="2" name="newMessage" placeholder="New message..."></textarea>
-                        <a class="send nav" href="#" ><button class="fa fa-arrow-circle-right fa-3x" onclick="document.getElementById('text').setAttribute ('placeholder', 'New message...');"></button></a>
-		            </form>
-                </footer>
             </div>
+            <footer>
+                <form class = "newMessage">
+                    <textarea type="text" rows="2" name="newMessage" placeholder="New message..." id="text"></textarea>
+                    <a class="send nav" href="#" ><i class="fa fa-arrow-circle-right fa-3x" onclick="loadText()"></i></a>
+                </form>
+            </footer>
         </div>
     </div>    
 </body>

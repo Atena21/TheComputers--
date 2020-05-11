@@ -1,8 +1,10 @@
-function loadArray(){
-    var text1 = {user : "me", message: "oi"};
-    var text2 = {user : "user2", message: "ola2"};
-    var text3 = {user : "user3", message: "ola3"};
-    var array = [text1, text2, text3, text1];
+var text1 = {user : "me", message: "oi"};
+var text2 = {user : "user2", message: "ola2"};
+var text3 = {user : "user3", message: "ola3"};
+var array_original = [text1, text2, text3, text1];
+var array_novo=[];
+
+function loadArray(array){
 
     array.forEach(function(item) {
     var mdiv = document.createElement("div");
@@ -24,4 +26,20 @@ function loadArray(){
     mdiv.cli
     document.getElementById("chats").appendChild(mdiv);
    });
+}
+
+
+function loadText(){
+    var text = document.getElementById("text").value;
+    console.log(text);
+    document.getElementById('text').value="";
+    document.getElementById('text').placeholder= "New message...";
+    var textme = {user: "me", message: text};
+    array_novo=[textme]
+
+    //tem que pegar daqui pra ir pro bd(array_novo)
+    
+    if(text != ""){
+        loadArray(array_novo);
+    }
 }
