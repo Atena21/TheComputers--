@@ -1,13 +1,10 @@
 package com.example.TheComputersmm.dto;
 
-import com.example.TheComputersmm.domain.Type;
-
 public class CreateUserCommand {
     public String username;
     public String password;
 	public String retype;
     public String email;
-    public Type type;
 
     public String getUsername() {
         return username;
@@ -39,13 +36,5 @@ public class CreateUserCommand {
 
     public void setEmail(String email) {
         this.email = email;
-    }
-
-    public Type getType() {
-        return type;
-    }
-
-    public void setType(Type type) {
-        this.type = type;
     }
 }

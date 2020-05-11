@@ -18,9 +18,6 @@ public class User {
 
   private String email;
 
-  @Enumerated(EnumType.STRING)
-  private Type type;
-
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
       name = "user_room",
@@ -30,16 +27,13 @@ public class User {
 
   public User() {}
 
-  public User(String username, String password, String email, Type type) {
+  public User(String username, String password, String email) {
     this.username = username;
     this.password = password;
     this.email = email;
-    this.type = type;
   }
 
-  //
-  // Métodos de acesso
-  //
+  // Getter and Setters
   public Integer getId() {
     return id;
   }
@@ -70,14 +64,6 @@ public class User {
 
   public void setEmail(String email) {
     this.email = email;
-  }
-
-  public Type getType() {
-    return type;
-  }
-
-  public void setType(Type type) {
-    this.type = type;
   }
 
   public Set<Room> getRooms() {

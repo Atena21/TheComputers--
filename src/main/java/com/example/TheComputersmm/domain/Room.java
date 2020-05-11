@@ -23,9 +23,7 @@ public class Room {
     this.name = name;
   }
 
-  //
-  // Métodos de acesso
-  //
+  // Getter and Setters
 
   public Integer getId() {
     return id;

@@ -50,7 +50,7 @@ public class ChatSelectorService {
 	
 
 	private ChatListCommand convert(Room room) {
-		return new ChatListCommand(room.getId(), room.getName(), "oioioi");
+		return new ChatListCommand(room.getId(), room.getName(), "LastMessage");
 	}
 
 	private boolean validateRooms(User currentUser) {

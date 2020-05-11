@@ -1,7 +1,6 @@
 package com.example.TheComputersmm.beans;
 
 import com.example.TheComputersmm.domain.Room;
-import com.example.TheComputersmm.domain.Type;
 import com.example.TheComputersmm.domain.User;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
@@ -32,13 +31,6 @@ public class SessionBean
 	public String getUsername()
 	{
 		return sessionUser == null ? null : sessionUser.getUsername();
-	}
-	
-	public Type getLoggedRole()
-	{
-		if(sessionUser == null)
-			return null;
-		return sessionUser.getType();
 	}
 	
 	public void enterRoom(Room room) {

@@ -21,9 +21,7 @@ public class Message {
 
   @ManyToOne private Room room;
 
-  //
-  // Métodos de acesso
-  //
+  // Getter and Setters
   public Integer getId() {
     return id;
   }

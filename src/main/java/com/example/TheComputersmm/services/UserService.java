@@ -1,7 +1,7 @@
 package com.example.TheComputersmm.services;
 
 import com.example.TheComputersmm.domain.Room;
-import com.example.TheComputersmm.domain.Type;
+
 import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
 import com.example.TheComputersmm.repositories.UserRepository;
@@ -32,8 +32,7 @@ public class UserService {
 	      this.save(
 	              new User(command.getUsername(),
 	                      command.getPassword(),
-	                      command.getEmail(),
-	                      Type.REGULAR)
+	                      command.getEmail())
 	      );
 	      return true;
 	    }

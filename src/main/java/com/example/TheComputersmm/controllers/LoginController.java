@@ -19,7 +19,7 @@ public class LoginController {
   public String login(@RequestBody LoginCommand command) {
     this.loginService.login(command);
     if(this.loginService.isLogged())
-    	return String.valueOf(loginService.userRole());
+    	return "LOGGED";
     return "NOT_LOGGED";
   }
 

@@ -1,7 +1,6 @@
 package com.example.TheComputersmm.services;
 
 import com.example.TheComputersmm.beans.SessionBean;
-import com.example.TheComputersmm.domain.Type;
 import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.LoginCommand;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,9 +35,5 @@ public class LoginService {
 
   public boolean isLogged() {
     return sessionBean.isLogged();
-  }
-  
-  public Type userRole() {
-	  return sessionBean.getLoggedRole();
   }
 }
