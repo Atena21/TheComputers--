@@ -35,19 +35,19 @@ public class UserController {
     return String.valueOf(deleted);
   }
 
-  @RequestMapping(value = "/updateUserEmail", method = RequestMethod.POST, produces = "text/plain")
-  @ResponseBody
-  public String updateEmail(@RequestBody UpdateUserEmailCommand command) {
-    Boolean updated = this.userService.updateEmail(command);
-    return String.valueOf(updated);
-  }
-
-  @RequestMapping(value = "/updateUserPassword", method = RequestMethod.POST, produces = "text/plain")
-  @ResponseBody
-  public String updatePassword(@RequestBody UpdateUserPasswordCommand command) {
-    Boolean updated = this.userService.updatePassword(command);
-    return String.valueOf(updated);
-  }
+//  @RequestMapping(value = "/updateUserEmail", method = RequestMethod.POST, produces = "text/plain")
+//  @ResponseBody
+//  public String updateEmail(@RequestBody UpdateUserEmailCommand command) {
+//    Boolean updated = this.userService.updateEmail(command);
+//    return String.valueOf(updated);
+//  }
+//
+//  @RequestMapping(value = "/updateUserPassword", method = RequestMethod.POST, produces = "text/plain")
+//  @ResponseBody
+//  public String updatePassword(@RequestBody UpdateUserPasswordCommand command) {
+//    Boolean updated = this.userService.updatePassword(command);
+//    return String.valueOf(updated);
+//  }
 
   @RequestMapping(value = "/getUserRooms", method = RequestMethod.GET)
   public Set<Room> getUserRooms(@RequestBody GetUserRoomsCommand command) {

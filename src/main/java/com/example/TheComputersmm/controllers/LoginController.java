@@ -14,7 +14,7 @@ public class LoginController {
     this.loginService = loginService;
   }
 
-  @RequestMapping(value = "/login", method = RequestMethod.POST, produces = "text/plain")
+  @RequestMapping(value = "/InitialPage", method = RequestMethod.POST, produces = "text/plain")
   @ResponseBody
   public String login(@RequestBody LoginCommand command) {
     this.loginService.login(command);
@@ -23,7 +23,7 @@ public class LoginController {
     return "NOT_LOGGED";
   }
 
-  @RequestMapping(value = "/login", method = RequestMethod.GET, produces = "text/plain")
+  @RequestMapping(value = "/InitialPage", method = RequestMethod.GET, produces = "text/plain")
   @ResponseBody
   public String logged() {
     return String.valueOf(this.loginService.isLogged());

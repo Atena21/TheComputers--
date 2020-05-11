@@ -24,7 +24,7 @@ public class ChatService {
 	
 	public ChatInfoCommand getChatInfo() {
 		ChatInfoCommand chatInfo = new ChatInfoCommand( sessionBean.getCurrentUser().getId(), 
-														sessionBean.getCurrentRoom().getId(), 
+														sessionBean.getCurrentRoom().getId(),
 														sessionBean.getUsername(), 
 														sessionBean.getCurrentRoom().getName());
 		return chatInfo;
@@ -32,7 +32,7 @@ public class ChatService {
 	
 	public List<MessageCommand> retrieveChatMessages() {
 		List<MessageCommand> result = new ArrayList<MessageCommand>();
-		List<Message> messages = messageRepository.findAllByRoomIdOrderByCreatedDate(sessionBean.getCurrentRoom().getId()); 
+		List<Message> messages = messageRepository.findAllByRoomIdOrderByCreatedDate(sessionBean.getCurrentRoom().getId());
 		for(Message message: messages)
 			result.add(convert(message));
 		

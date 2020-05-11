@@ -4,7 +4,7 @@ import com.example.TheComputersmm.beans.SessionBean;
 import com.example.TheComputersmm.domain.Room;
 import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.ChatListCommand;
-import com.example.TheComputersmm.dto.ChatSelectionCommand;
+import com.example.TheComputersmm.dto.SearchCommand;
 import com.example.TheComputersmm.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -13,12 +13,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class ChatSelectorService {
+public class SearchService {
 	private SessionBean sessionBean;
 	private RoomRepository roomRepository;
 	
 	@Autowired
-	public ChatSelectorService(SessionBean sessionBean, RoomRepository roomRepository) {
+	public SearchService(SessionBean sessionBean, RoomRepository roomRepository) {
 		this.sessionBean = sessionBean;
 		this.roomRepository = roomRepository;
 	}
@@ -38,8 +38,8 @@ public class ChatSelectorService {
 		return chats;
 	}
 	
-	public boolean selectChat(ChatSelectionCommand chatSelectionCommand) {
-		Room selectedRoom = roomRepository.findById(chatSelectionCommand.getChatId()).get();
+	public boolean selectChat(SearchCommand searchCommand) {
+		Room selectedRoom = roomRepository.findById(searchCommand.getChatId()).get();
 		
 		if(selectedRoom == null)
 			return false;

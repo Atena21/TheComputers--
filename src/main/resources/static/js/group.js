@@ -1,6 +1,6 @@
 var text1 = {user : "me", message: "oi"};
-var text2 = {user : "user2", message: "ola2"};
-var text3 = {user : "user3", message: "ola3"};
+var text2 = {user : "Sarah", message: "ola2"};
+var text3 = {user : "Ale", message: "ola3"};
 var array_original = [text1, text2, text3, text1];
 var array_novo=[];
 

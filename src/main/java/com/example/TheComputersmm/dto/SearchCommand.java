@@ -2,10 +2,10 @@ package com.example.TheComputersmm.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ChatSelectionCommand {
+public class SearchCommand {
 	private Integer chatId;
 	
-	public ChatSelectionCommand(@JsonProperty("chatId") Integer chatId) {
+	public SearchCommand(@JsonProperty("chatId") Integer chatId) {
 		this.chatId = chatId;
 	}
 

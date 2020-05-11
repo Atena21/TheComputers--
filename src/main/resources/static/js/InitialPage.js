@@ -18,7 +18,7 @@ window.onclick = function(e) {
 function loadArray(){
     var person1 = {name: "Sarah", lastMessage: "Oi"}
     var person2 = {name: "Ale", lastMessage: "Hey!"}
-    var array = [person1, person2, person1, person2, person1, person2, person1, person2, person1, person2, person1, person2];
+    var array = [person1, person2];
 
     array.forEach(function(item) {
     var buttonDiv = document.createElement("div");

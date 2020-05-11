@@ -56,7 +56,7 @@ h3.titulo {
 .wrap-initialPage {
   padding: 1px 1px;
   overflow-y: scroll;
-  height: 500px;
+  height: 800px;
   width: 100%;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 10px;

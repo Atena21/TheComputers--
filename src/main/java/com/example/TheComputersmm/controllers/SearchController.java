@@ -1,0 +1,32 @@
+package com.example.TheComputersmm.controllers;
+
+import com.example.TheComputersmm.dto.ChatListCommand;
+import com.example.TheComputersmm.dto.SearchCommand;
+import com.example.TheComputersmm.services.SearchService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@RestController
+public class SearchController {
+
+	private SearchService searchService;
+	
+	@Autowired
+	public SearchController(SearchService searchService) {
+		this.searchService = searchService;
+	}
+	
+	@RequestMapping(value = "/chats", method = RequestMethod.GET)
+	public List<ChatListCommand> chats() {
+		return this.searchService.chats();
+	}
+
+	@RequestMapping(value = "/search", method = RequestMethod.POST, produces = "text/plain")
+	@ResponseBody
+	public String selectChat(@RequestBody SearchCommand searchCommand) {
+		return String.valueOf(searchService.selectChat(searchCommand));
+	}
+	
+}
