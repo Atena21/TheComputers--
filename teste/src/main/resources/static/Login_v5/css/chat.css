@@ -18,6 +18,11 @@
     text-decoration: none;
   }
 
+  .navbar{
+    height:62px;
+    width: 100%;
+  }
+
   h3.titulo {
     text-align: center;
     display: inline-block;
@@ -26,7 +31,7 @@
 
   .container-initialPage {
     width: 100%;  
-    min-height: 100vh;
+    min-height: 750px;
     display: -webkit-box;
     display: -webkit-flex;
     display: -moz-box;
@@ -45,10 +50,13 @@
   .limiter {
     width: 100%;
     margin: 0 auto;
+    overflow: hidden;
   }
 
   .wrap-initialPage {
     padding: 1px 1px;
+    overflow-y: scroll;
+    height: 500px;
     width: 100%;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
