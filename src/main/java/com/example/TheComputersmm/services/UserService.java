@@ -31,8 +31,7 @@ public class UserService {
 	    if (user == null) {
 	      this.save(
 	              new User(command.getUsername(),
-	                      command.getPassword(),
-	                      command.getEmail())
+	                      command.getPassword())
 	      );
 	      return true;
 	    }
@@ -47,16 +46,6 @@ public class UserService {
       return false;
 
     this.deleteById(user.getId());
-    return true;
-  }
-
-  public boolean updateEmail(UpdateUserEmailCommand command) {
-    User user = this.findByUsername(command.getUsername());
-    if (user == null)
-      return false;
-
-    user.setEmail(command.getEmail());
-    this.save(user);
     return true;
   }
 

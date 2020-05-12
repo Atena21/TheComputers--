@@ -18,7 +18,7 @@ public class SearchController {
 		this.searchService = searchService;
 	}
 	
-	@RequestMapping(value = "/chats", method = RequestMethod.GET)
+	@RequestMapping(value = "/chatss", method = RequestMethod.GET)
 	public List<ChatListCommand> chats() {
 		return this.searchService.chats();
 	}

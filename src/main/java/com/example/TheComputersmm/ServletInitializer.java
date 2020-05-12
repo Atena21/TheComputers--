@@ -16,7 +16,7 @@ public class ServletInitializer extends SpringBootServletInitializer {
     @Override
     protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
 
-        User user1 = new User("Tiussi", "123", "tiussi@gmail.com");
+        User user1 = new User("Tiussi", "123");
         this.userService.save(user1);
 
         return application.sources(TheComputersmmApplication.class);

@@ -17,7 +17,6 @@ public class MessageService {
     private SimpMessagingTemplate simpMessagingTemplate;
     private RoomRepository roomRepository;
     private UserRepository userRepository;
-//    private SessionBean sessionBean;
 
     @Autowired
     public MessageService(MessageRepository messageRepository,
