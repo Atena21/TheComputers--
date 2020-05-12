@@ -1,5 +1,7 @@
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
+var users;
+
 function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }
@@ -14,14 +16,68 @@ window.onclick = function(e) {
     }
 }
 
-// Shows a initial suggestion to new chats
-function loadArray(){
-    var person1 = "Sarah";
-    var person2 = "Ale";
-    var person3 = "Milena";
-    var array = [person1, person2, person3];
+let success;
 
-    array.forEach(function(item) {
+function createRoom() {
+    const roomName = document.getElementById("nomeSala").value;
+
+    const createRoomCommand = {
+        roomName: roomName
+    }
+
+    console.log(createRoomCommand);
+
+    fetch("/createRoom",
+        {
+            method: 'POST',
+            body: JSON.stringify(createRoomCommand),
+            headers: {
+                'Content-Type': 'application/json',
+                'access-control-allow-origin': '*'
+            }
+        })
+        .then(response => response.text())
+        .then(data => success = data)
+        .then(callback);
+}
+
+function callback() {
+
+    if (success === "true")
+        document.location.href = "chat.html";
+    else
+        window.alert("Insira o nome da sala.");
+}
+
+function addUserToRoom() {
+	
+	//ajeitar pra pegar todos os usuarios selecionados
+    const username = document.getElementById("nome_cad").value;
+    const roomName = document.getElementById("nomeSala").value;
+
+    const addUserToRoomCommand = {
+        username: username,
+        roomName: roomName
+    }
+
+    console.log(addUserToRoomCommand);
+
+    fetch("/addUserToRoom",
+        {
+            method: 'POST',
+            body: JSON.stringify(addUserToRoomCommand),
+            headers: {
+                'Content-Type': 'application/json',
+                'access-control-allow-origin': '*'
+            }
+        })
+        .then(response => response.text())
+}
+
+// Shows a initial suggestion to new chats
+function loadUsers(){
+
+    users.forEach(function(item) {
         var buttonDiv = document.createElement("div");
         buttonDiv.classList.add("btnDiv");
         var checkbox = document.createElement("input");
@@ -38,3 +94,18 @@ function loadArray(){
         document.getElementById("contacts").appendChild(buttonDiv);
     });
 }
+
+function getUsers()
+{
+    fetch("/getUsers",
+            {
+                method: 'GET',
+                headers: {
+                    'access-control-allow-origin': '*'
+                }
+            })
+            .then(response => response.json())
+            .then(data => users = data)
+}
+
+$("document").ready(getUsers);

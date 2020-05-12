@@ -53,4 +53,9 @@ public class UserController {
   public Set<Room> getUserRooms(@RequestBody GetUserRoomsCommand command) {
     return this.userService.getRooms(command);
   }
+  
+  @RequestMapping(value = "/getUser", method = RequestMethod.GET)
+  public Iterable<User> getUser() {
+    return this.userService.findAll();
+  }
 }

@@ -87,7 +87,6 @@ function getMessages()
             })
             .then(response => response.json())
             .then(data => messages = data)
-            .then(loadMessages);
 }
 
 $("document").ready(getChatInfo);
