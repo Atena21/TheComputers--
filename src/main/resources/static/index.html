@@ -53,7 +53,7 @@
 						</span>
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Username is required">
-						<input class="input100" type="text" name="username" required oninvalid="setCustomValidity('Username is required')" oninput="try{setCustomValidity('')}catch(e){}">
+						<input id="usuario" class="input100" type="text" name="username" required oninvalid="setCustomValidity('Username is required')" oninput="try{setCustomValidity('')}catch(e){}">
 						<span class="focus-input100"></span>
 					</div>
 					
@@ -67,13 +67,13 @@
 						</a> -->
 					</div>
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="pass" required oninvalid="setCustomValidity('Password is required')" oninput="try{setCustomValidity('')}catch(e){}">
+						<input id="senha" class="input100" type="password" name="pass" required oninvalid="setCustomValidity('Password is required')" oninput="try{setCustomValidity('')}catch(e){}">
 						<span class="focus-input100"></span>
 					</div>
 
 
 					<div class="container-login100-form-btn m-t-17">
-						<button class="login100-form-btn" type="submit">
+						<button class="login100-form-btn" type="submit" onclick="login()">
 							Submit
 						</button>
 					</div>

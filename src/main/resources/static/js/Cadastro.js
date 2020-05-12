@@ -5,7 +5,5 @@ function PasswordEqual() {
       }
     else {
         return true;
-        
-        
     }
 }

@@ -1,16 +1,14 @@
-var text1 = {user : "me", message: "oiiiiiiii"};
-var text2 = {user : "other", message: "Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola Ola "};
-var array_original = [text1, text2, text1, text2];
-
-//array_original são as mensagens do histórico
-var array_novo=[];
+var chatInfo;
+var messages;
+var stompClient = null;
 
 
-function loadArray(array){
-    array.forEach(function(item) {
+function loadMessages(){
+	
+    messages.forEach(function(item) {
     var mdiv = document.createElement("div");
     var div = document.createElement("div")
-    if(item.user == "me"){
+    if(item.userId == chatInfo.userId){
         mdiv.classList.add("me");
     }
     else{
@@ -27,16 +25,69 @@ function loadArray(array){
 }
 
 function loadText(){
+	
     var text = document.getElementById("text").value;
     console.log(text);
     document.getElementById('text').value="";
     document.getElementById('text').placeholder= "New message...";
-    var textme = {user: "me", message: text};
-    array_novo=[textme]
-
-    //tem que pegar daqui pra ir pro bd(array_novo)
     
-    if(text != ""){
-        loadArray(array_novo);
-    }
+    var message = {
+			content: text,
+			username: chatInfo.username,
+			userId: chatInfo.userId,
+			roomId: chatInfo.roomId
+	};
+	stompClient.send("/app/message", {}, JSON.stringify(message));
+
 }
+
+
+function connect() {
+    var socket = new SockJS('/mywebsockets');
+    stompClient = Stomp.over(socket);
+    stompClient.connect({}, function (frame) {
+        console.log('Connected: ' + frame);
+        stompClient.subscribe('/topic/' + chatInfo.roomId, function (message) {
+            addMessage(JSON.parse(message.body));
+        });
+    });
+}
+
+function disconnect() {
+    if (stompClient !== null) {
+        stompClient.disconnect();
+    }
+    console.log("Disconnected");
+}
+
+function getChatInfo()
+{
+    fetch("/chatInfo",
+            {
+                method: 'GET',
+                headers: {
+                    'access-control-allow-origin': '*'
+                }
+            })
+            .then(response => response.json())
+            .then(data => chatInfo = data)
+            .then(getMessages)
+            .then(connect);
+}
+
+
+function getMessages()
+{
+	fetch("/messages",
+            {
+                method: 'GET',
+                headers: {
+                    'access-control-allow-origin': '*'
+                }
+            })
+            .then(response => response.json())
+            .then(data => messages = data)
+            .then(loadMessages);
+}
+
+$("document").ready(getChatInfo);
