@@ -266,3 +266,6 @@ a.send{
   bottom: 2%;
   color: black;
 }
+textarea{
+    resize: none;
+}

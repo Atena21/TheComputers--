@@ -36,21 +36,23 @@
                         <a href="./index.html">Logout</a>
                         <a href="#">Delete Account</a>
                     </div>
-                
-                    <div class="container-contacts">
-                        <section class="wrap-contacts" id="contacts"> 
-                            <!-- <script>loadArray()</script> -->
-                           <!--  <script>loadArray()</script>
-                            <script>loadArray()</script> -->
-                            <script>loadArray()</script>
-                        </section>
-                    </div>
-                    
-                    <footer class="footer">
-                        <a class="send" href="./group.html" >
-                            <i class="fa fa-arrow-circle-right fa-3x"></i>
-                        </a>
-                    </footer>
+                    <form action="./group.html">
+                        <div data-validate = "Room name is required">
+                            <textarea class="wrap-contacts" placeholder="Insira o nome da sala" id="nomeSala" required oninvalid="setCustomValidity('Room name is required')" oninput="try{setCustomValidity('')}catch(e){}"></textarea>
+                        </div>
+
+                        <div class="container-contacts">
+                            <section class="wrap-contacts" id="contacts">
+                                <script>loadArray()</script>
+                            </section>
+                        </div>
+
+                        <footer class="footer">
+                            <button class="send" href="./group.html" type="submit">
+                                <i class="fa fa-arrow-circle-right fa-3x"></i>
+                            </button>
+                        </footer>
+                    </form>
                 </div>
             </div>
         </div>
