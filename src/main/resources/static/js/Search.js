@@ -37,6 +37,7 @@ function createRoom() {
             }
         })
         .then(response => response.text())
+        .then(getUsersCheckbox)
         .then(data => success = data)
         .then(callback);
 }
@@ -49,29 +50,37 @@ function callback() {
         window.alert("Insira o nome da sala.");
 }
 
-function addUserToRoom() {
+function addUserToRoom(username){
+	const roomName = document.getElementById("nomeSala").value;
 	
-	//ajeitar pra pegar todos os usuarios selecionados
-    const username = document.getElementById("nome_cad").value;
-    const roomName = document.getElementById("nomeSala").value;
+	const addUserToRoomCommand = {
+	        username: username,
+	        roomName: roomName
+	    }
 
-    const addUserToRoomCommand = {
-        username: username,
-        roomName: roomName
-    }
 
-    console.log(addUserToRoomCommand);
+	fetch("/addUserToRoom",
+	    {
+	    	method: 'POST',
+	        body: JSON.stringify(addUserToRoomCommand),
+	        headers: {
+	            'Content-Type': 'application/json',
+	                'access-control-allow-origin': '*'
+	        }
+	    })
+	    .then(response => response.text())
+}
 
-    fetch("/addUserToRoom",
-        {
-            method: 'POST',
-            body: JSON.stringify(addUserToRoomCommand),
-            headers: {
-                'Content-Type': 'application/json',
-                'access-control-allow-origin': '*'
-            }
-        })
-        .then(response => response.text())
+function getUsersCheckbox() {
+	
+	var checkbox = document.getElementsByName('checkboxName');
+	
+	for (var i = 0; i < checkbox.length; i++){
+		if ( checkbox[i].checked ) {
+			const username = checkbox[i].value;
+			addUserToRoom(username);
+		}
+	}
 }
 
 // Shows a initial suggestion to new chats
@@ -82,6 +91,7 @@ function loadUsers(){
         buttonDiv.classList.add("btnDiv");
         var checkbox = document.createElement("input");
         checkbox.setAttribute("type","checkbox");
+        checkbox.setAttribute("name","checkboxName");
         checkbox.classList.add("checkbox")
         buttonDiv.appendChild(checkbox);
         var button = document.createElement("a");
