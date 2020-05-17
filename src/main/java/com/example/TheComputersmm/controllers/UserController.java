@@ -1,6 +1,7 @@
 package com.example.TheComputersmm.controllers;
 
 import com.example.TheComputersmm.domain.Room;
+import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
 import com.example.TheComputersmm.services.UserService;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -23,7 +23,7 @@ function cadastrar() {
         method: 'POST',
         body: JSON.stringfy(cadastrarCommand),
         headers: {
-            Content-Type': 'application/json',
+            'Content-Type': 'application/json',
             'access-control-allow-origin': '*'
         }
     })
