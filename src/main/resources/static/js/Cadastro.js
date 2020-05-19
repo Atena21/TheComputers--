@@ -8,20 +8,23 @@ function PasswordEqual() {
     }
 }
 
+var success;
+
 function cadastrar() {
-    const name = document.getElementById("name").value
-    const password1 = document.getElementById("pass1").value
-    const password2 = document.getElementById("pass2").value
+    const name = document.getElementById("name").value;
+    const pass1 = document.getElementById("pass1").value;
+    const pass2 = document.getElementById("pass2").value;
 
     const cadastrarCommand = {
         username: name,
         password: pass1,
         retype: pass2
-    }
+    };
+
 
     fetch("/newuser",{
         method: 'POST',
-        body: JSON.stringfy(cadastrarCommand),
+        body: JSON.stringify(cadastrarCommand),
         headers: {
             'Content-Type': 'application/json',
             'access-control-allow-origin': '*'
@@ -34,7 +37,7 @@ function cadastrar() {
 
 function callback() {
     if (success === "true")
-        document.location.href = "userSignedup.html";
+        document.location.href = "InitialPage.html";
     else
         window.alert("Não foi possível realizar essa operação");
 }

@@ -12,9 +12,8 @@
         const loginRequest = {
             username: username,
             password: password
-        }
+        };
 
-        console.log(loginRequest);
 
         fetch("/login",
             {

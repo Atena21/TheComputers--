@@ -56,7 +56,7 @@ function addUserToRoom(username){
 	const addUserToRoomCommand = {
 	        username: username,
 	        roomName: roomName
-	    }
+	    };
 
 
 	fetch("/addUserToRoom",
@@ -68,7 +68,7 @@ function addUserToRoom(username){
 	                'access-control-allow-origin': '*'
 	        }
 	    })
-	    .then(response => response.text())
+	    .then(response => response.text());
 }
 
 function getUsersCheckbox() {
@@ -84,7 +84,9 @@ function getUsersCheckbox() {
 }
 
 // Shows a initial suggestion to new chats
-function loadUsers(){
+function loadUsers(users){
+    
+    console.log(users);
 
     users.forEach(function(item) {
         var buttonDiv = document.createElement("div");
@@ -97,7 +99,7 @@ function loadUsers(){
         var button = document.createElement("a");
         button.classList.add("btn");
         var text = document.createElement("span");
-        var name = document.createTextNode(item);
+        var name = document.createTextNode(item.username);
         text.appendChild(name);
         button.appendChild(text);
         buttonDiv.appendChild(button);
@@ -115,7 +117,8 @@ function getUsers()
                 }
             })
             .then(response => response.json())
-            .then(data => users = data)
+            .then(data => loadUsers(data));
 }
 
-$("document").ready(getUsers);
+//document.addEventListener("DOMContentLoaded", getUsers);
+//$("document").ready(getUsers);

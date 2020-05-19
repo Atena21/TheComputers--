@@ -6,17 +6,17 @@ spring:
     view:
       prefix: /WEB-INF/jsp/
       suffix: .html
-
+      
+  thymeleaf:
+      enabled: false
+      
   datasource:
     url: "jdbc:postgresql://192.168.91.56:5432/postgres?currentSchema=chat"
     username: postgres
     password: postgres
-
   jpa:
     database: postgresql
     show-sql: true
     generate-ddl: false
     hibernate:
       ddl-auto: update
-
-
