@@ -8,9 +8,9 @@ spring:
       suffix: .html
 
   datasource:
-    url: "jdbc:postgresql://localhost:5432/postgres?currentSchema=chat"
+    url: "jdbc:postgresql://192.168.91.56:5432/postgres?currentSchema=chat"
     username: postgres
-    password: ***mudar***
+    password: postgres
 
   jpa:
     database: postgresql
@@ -18,3 +18,5 @@ spring:
     generate-ddl: false
     hibernate:
       ddl-auto: update
+
+
