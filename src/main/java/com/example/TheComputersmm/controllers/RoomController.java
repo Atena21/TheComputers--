@@ -1,9 +1,7 @@
 package com.example.TheComputersmm.controllers;
 
-import com.example.TheComputersmm.dto.AddUserToRoomCommand;
-import com.example.TheComputersmm.dto.CreateRoomCommand;
-import com.example.TheComputersmm.dto.DeleteRoomCommand;
-import com.example.TheComputersmm.dto.RemoveUserFromRoomCommand;
+import com.example.TheComputersmm.domain.Room;
+import com.example.TheComputersmm.dto.*;
 import com.example.TheComputersmm.services.RoomService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +9,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
+import java.util.Set;
 
 @Controller
 public class RoomController {
@@ -50,4 +50,5 @@ public class RoomController {
         Boolean removed = this.roomService.removeUser(command);
         return String.valueOf(removed);
     }
+
 }

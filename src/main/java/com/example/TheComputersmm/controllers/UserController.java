@@ -3,6 +3,7 @@ package com.example.TheComputersmm.controllers;
 import com.example.TheComputersmm.domain.Room;
 import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
+import com.example.TheComputersmm.services.GetRoomsService;
 import com.example.TheComputersmm.services.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,6 +24,7 @@ public class UserController {
     this.userService = userService;
   }
 
+
   @RequestMapping(value = "/newuser", method = RequestMethod.POST, produces = "text/plain")
   @ResponseBody
   public String createUser(@RequestBody CreateUserCommand command) {
@@ -37,12 +39,6 @@ public class UserController {
     return String.valueOf(deleted);
   }
 
-//  @RequestMapping(value = "/updateUserEmail", method = RequestMethod.POST, produces = "text/plain")
-//  @ResponseBody
-//  public String updateEmail(@RequestBody UpdateUserEmailCommand command) {
-//    Boolean updated = this.userService.updateEmail(command);
-//    return String.valueOf(updated);
-//  }
 //
 //  @RequestMapping(value = "/updateUserPassword", method = RequestMethod.POST, produces = "text/plain")
 //  @ResponseBody
@@ -62,4 +58,7 @@ public class UserController {
   public List<User> getUsers() {
     return this.userService.findAll();
   }
+
+
+
 }

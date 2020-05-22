@@ -15,10 +15,9 @@ window.onclick = function(e) {
 }
 
 
-function loadArray(){
-    var person1 = {name: "Sarah", lastMessage: "Oi"}
-    var person2 = {name: "Ale", lastMessage: "Hey!"}
-    var array = [person1, person2];
+function loadArray(var array){
+
+    var lastMessage = "última mensagem";
 
     array.forEach(function(item) {
     var buttonDiv = document.createElement("div");
@@ -27,7 +26,7 @@ function loadArray(){
     // console.log(button);
     var name = document.createTextNode(item.name);
     var br = document.createElement("br");
-    var lastMessage = document.createTextNode(item.lastMessage);
+  //  var lastMessage = document.createTextNode(item.lastMessage);
     button.href = "./chat.html";
     button.appendChild(name);
     button.appendChild(br);
@@ -36,6 +35,29 @@ function loadArray(){
     buttonDiv.appendChild(button);
     buttonDiv.cli
     document.getElementById("chats").appendChild(buttonDiv);
-    // console.log("Banana");
     });
+
+    function logout (){
+        fetch("/logout",
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'access-control-allow-origin': '*'
+                    }
+                })
+                .then(response => response.text());
+    };
+
+    function getRoomsByUser () {
+        fetch("/getRoomsByUser",
+                {
+                    method: 'GET',
+                    headers: {
+                        'access-control-allow-origin': '*'
+                    }
+                })
+                .then(response => response.json())
+                .then(data => loadArray(data));
+    }
 }

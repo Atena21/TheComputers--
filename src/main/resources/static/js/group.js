@@ -38,7 +38,7 @@ function loadText(){
     array_novo=[textme]
 
     //tem que pegar daqui pra ir pro bd(array_novo)
-    
+
     if(text != ""){
         loadArray(array_novo);
     }

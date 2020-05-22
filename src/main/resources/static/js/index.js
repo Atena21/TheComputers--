@@ -31,7 +31,7 @@
     
     function validateLogin() {
         if (logged === "LOGGED")
-            document.location.href = "InitialPage.html";
+            document.location.href = "./InitialPage.html";
         else
             window.alert("Usuário ou senhha incorretos");
     }

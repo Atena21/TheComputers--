@@ -28,4 +28,10 @@ public class LoginController {
   public String logged() {
     return String.valueOf(this.loginService.isLogged());
   }
+
+  @RequestMapping(value = "/logout", method = RequestMethod.POST, produces = "text/plain")
+  public void logout() {
+    this.loginService.logout();
+
+  }
 }

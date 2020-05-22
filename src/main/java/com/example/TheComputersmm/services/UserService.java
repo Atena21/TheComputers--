@@ -68,6 +68,8 @@ public class UserService {
     return user.getRooms();
   }
 
+
+
   public User findByUsername(String username) {
     return this.userRepository.findByUsername(username);
   }
@@ -83,4 +85,6 @@ public class UserService {
   public List<User> findAll() {
     return this.userRepository.findAll();
   }
+
+
 }

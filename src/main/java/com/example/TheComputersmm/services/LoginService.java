@@ -36,4 +36,8 @@ public class LoginService {
   public boolean isLogged() {
     return sessionBean.isLogged();
   }
+
+  public void logout(){
+    sessionBean.logout();
+  }
 }

@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class MessageController {
-	
+
 	private MessageService messageService;
-	
+
 	@Autowired
 	public MessageController(MessageService messageService) {
 		this.messageService = messageService;
 	}
-	
+
 	@MessageMapping("/message")
 	public void broadcastNews(@Payload MessageCommand message) {
 		messageService.receiveMessage(message);
