@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Set;
+import org.springframework.web.bind.annotation.RestController;
 
+@RestController
 public class GetRoomsController {
     private GetRoomsService getRoomsService;
 
@@ -20,8 +22,8 @@ public class GetRoomsController {
         this.getRoomsService = getRoomsService;
 
     }
-
-
+    
+    
 
     @RequestMapping(value = "/getRoomsByUser", method = RequestMethod.GET, produces = "text/plain")
     @ResponseBody

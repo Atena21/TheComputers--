@@ -3,8 +3,7 @@ package com.example.TheComputersmm.dto;
 public class CreateUserCommand {
     public String username;
     public String password;
-	public String retype;
-    public String email;
+    public String retype;
 
     public String getUsername() {
         return username;
@@ -23,18 +22,10 @@ public class CreateUserCommand {
     }
 
     public String getRetype() {
-		return retype;
-	}
-
-	public void setRetype(String retype) {
-		this.retype = retype;
-	}
-    
-    public String getEmail() {
-        return email;
+        return retype;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setRetype(String retype) {
+        this.retype = retype;
     }
 }

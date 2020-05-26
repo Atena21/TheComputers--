@@ -25,7 +25,7 @@ public class UserController {
   }
 
 
-  @RequestMapping(value = "/newuser", method = RequestMethod.POST, produces = "text/plain")
+  @RequestMapping(value = "/newUser", method = RequestMethod.POST, produces = "text/plain")
   @ResponseBody
   public String createUser(@RequestBody CreateUserCommand command) {
     Boolean created = this.userService.create(command);

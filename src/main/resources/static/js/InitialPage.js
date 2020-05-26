@@ -15,7 +15,7 @@ window.onclick = function(e) {
 }
 
 
-function loadArray(var array){
+function loadArray(array){
 
     var lastMessage = "última mensagem";
 

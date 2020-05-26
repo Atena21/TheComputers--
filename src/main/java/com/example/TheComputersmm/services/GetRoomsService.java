@@ -20,12 +20,11 @@ public class GetRoomsService {
     @Autowired
     public GetRoomsService(SessionBean sessionBean) {
         this.sessionBean = sessionBean;
-        this.user = sessionBean.getCurrentUser();
     }
 
     public Set<RoomCommand> getRoomsByUser() {
         Set<RoomCommand> result = new HashSet<>();
-        Set<Room> rooms = user.getRooms();
+        Set<Room> rooms = sessionBean.getCurrentUser().getRooms();
         for(Room room: rooms)
             result.add(convert(room));
         return result;
