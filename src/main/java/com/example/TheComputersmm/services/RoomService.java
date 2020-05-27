@@ -97,7 +97,7 @@ public class RoomService {
     this.roomRepository.deleteById(id);
   }
 
-  private Room findByName(String name) {
+  public Room findByName(String name) {
     return this.roomRepository.findByName(name);
   }
 

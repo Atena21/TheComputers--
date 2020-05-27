@@ -2,9 +2,9 @@ package com.example.TheComputersmm.services;
 
 import com.example.TheComputersmm.beans.SessionBean;
 import com.example.TheComputersmm.domain.Room;
-
 import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
+import com.example.TheComputersmm.repositories.RoomRepository;
 import com.example.TheComputersmm.repositories.UserRepository;
 import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,11 +18,17 @@ import java.util.Set;
 public class UserService {
   private UserRepository userRepository;
   private SessionBean sessionBean;
+  private MessageService messageService;
+  private RoomRepository roomRepository;
+  
 
   @Autowired
-  public UserService(UserRepository userRepository, SessionBean sessionBean) {
+  public UserService(UserRepository userRepository, SessionBean sessionBean,
+          MessageService messageService, RoomRepository roomRepository) {
     this.userRepository = userRepository;
     this.sessionBean = sessionBean;
+    this.roomRepository = roomRepository;
+    this.messageService = messageService;
   }
 
   public boolean create(CreateUserCommand command) {
@@ -62,6 +68,15 @@ public class UserService {
     user.setPassword(command.getPassword());
     this.save(user);
     return true;
+  }
+  
+  public boolean sendMessage(SendMessageCommand command){
+      Room room = this.roomRepository.findByName(command.getRoomName());
+      User user = this.findByUsername(command.getUsername());
+      if(room == null || user == null) return false;
+      MessageCommand message = new MessageCommand(command.getText(), command.getUsername(), user.getId(), room.getId());
+      messageService.receiveMessage(message);
+      return true;      
   }
 
   public Set<RoomCommand> getRooms(UserCommand command) {

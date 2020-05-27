@@ -16,7 +16,7 @@ public class GetLastMessageCommand {
         return roomName;
     }
 
-    public void setRoomName(Integer id) {
+    public void setRoomName(String roomName) {
         this.roomName = roomName;
     }
 }

@@ -1,9 +1,6 @@
 package com.example.TheComputersmm.controllers;
 
-import com.example.TheComputersmm.domain.Room;
-import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
-import com.example.TheComputersmm.services.GetRoomsService;
 import com.example.TheComputersmm.services.UserService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -59,6 +56,12 @@ public class UserController {
     return this.userService.getUsers(command);
   }
 
+  @RequestMapping(value = "/sendMessage", method = RequestMethod.POST, produces = "text/plain")
+  @ResponseBody
+  public String removeUser(@RequestBody SendMessageCommand command) {
+    Boolean sent = this.userService.sendMessage(command);
+    return String.valueOf(sent);
+  }
 
 
 }
