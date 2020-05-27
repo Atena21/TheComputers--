@@ -49,14 +49,14 @@ public class UserController {
 
   @RequestMapping(value = "/getUserRooms", method = RequestMethod.GET)
   @ResponseBody
-  public Set<Room> getUserRooms(@RequestBody GetUserRoomsCommand command) {
+  public Set<Room> getUserRooms(@RequestBody UserCommand command) {
     return this.userService.getRooms(command);
   }
   
   @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
   @ResponseBody
-  public List<User> getUsers() {
-    return this.userService.findAll();
+  public List<UserCommand> getUsers() {
+    return this.userService.getUsers();
   }
 
 

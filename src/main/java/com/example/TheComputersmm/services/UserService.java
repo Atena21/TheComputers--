@@ -1,10 +1,12 @@
 package com.example.TheComputersmm.services;
 
+import com.example.TheComputersmm.beans.SessionBean;
 import com.example.TheComputersmm.domain.Room;
 
 import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
 import com.example.TheComputersmm.repositories.UserRepository;
+import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,10 +17,12 @@ import java.util.Set;
 @Service
 public class UserService {
   private UserRepository userRepository;
+  private SessionBean sessionBean;
 
   @Autowired
-  public UserService(UserRepository userRepository) {
+  public UserService(UserRepository userRepository, SessionBean sessionBean) {
     this.userRepository = userRepository;
+    this.sessionBean = sessionBean;
   }
 
   public boolean create(CreateUserCommand command) {
@@ -60,7 +64,7 @@ public class UserService {
     return true;
   }
 
-  public Set<Room> getRooms(GetUserRoomsCommand command) {
+  public Set<Room> getRooms(UserCommand command) {
     User user = this.findByUsername(command.getUsername());
     if(user == null)
       return new HashSet<>();
@@ -84,6 +88,20 @@ public class UserService {
 
   public List<User> findAll() {
     return this.userRepository.findAll();
+  }
+  
+  public List<UserCommand> getUsers(){
+      List<UserCommand> list = new ArrayList<UserCommand>();
+      List<User> users = findAll();
+      User currentUser = sessionBean.getCurrentUser();
+      for(User user : users){
+          if(user.getUsername().equals(currentUser.getUsername())) 
+              continue;
+          UserCommand item = new UserCommand();
+          item.setUsername(user.getUsername());
+          list.add(item);
+      }
+      return list;
   }
 
 

@@ -1,6 +1,6 @@
 package com.example.TheComputersmm.dto;
 
-public class GetUserRoomsCommand {
+public class UserCommand {
     public String username;
 
     public String getUsername() {

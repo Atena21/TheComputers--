@@ -31,7 +31,7 @@ public class SearchService {
 		
 		for(Room room : sessionBean.getCurrentUser().getRooms())
 		{
-			chats.add(convert(room));
+                    chats.add(convert(room));
 		}
 		
 		

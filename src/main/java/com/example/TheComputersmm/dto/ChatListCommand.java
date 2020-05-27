@@ -8,8 +8,7 @@ public class ChatListCommand {
 	private String lastMessage;
 	
 	public ChatListCommand(@JsonProperty("id") Integer id,
-						   @JsonProperty("name") String name,
-						   @JsonProperty("lastMessage") String lastMessage) {
+            @JsonProperty("name") String name, @JsonProperty("lastMessage") String lastMessage) {
 		this.id = id;
 		this.name = name;
 		this.lastMessage = lastMessage;
