@@ -10,9 +10,9 @@ public class MessageCommand
 	private Integer roomId;
 	
 	public MessageCommand(@JsonProperty("content") String content,
-						  @JsonProperty("username") String username,
-						  @JsonProperty("userId") Integer userId,
-						  @JsonProperty("roomId") Integer roomId)
+            @JsonProperty("username") String username,
+            @JsonProperty("userId") Integer userId,
+            @JsonProperty("roomId") Integer roomId)
 	{
 		this.content = content;
 		this.username = username;

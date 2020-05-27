@@ -14,7 +14,6 @@ import java.util.Set;
 
 @Controller
 public class RoomController {
-
     private RoomService roomService;
 
     @Autowired
@@ -50,5 +49,10 @@ public class RoomController {
         Boolean removed = this.roomService.removeUser(command);
         return String.valueOf(removed);
     }
-
+    
+    @RequestMapping(value = "/getLastMessage", method = RequestMethod.GET)
+    @ResponseBody
+    public MessageCommand getLastMessage(@RequestBody GetLastMessageCommand command) {
+        return this.roomService.getLastMessage(command);
+    }
 }

@@ -6,6 +6,8 @@ import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.AddUserToRoomCommand;
 import com.example.TheComputersmm.dto.CreateRoomCommand;
 import com.example.TheComputersmm.dto.DeleteRoomCommand;
+import com.example.TheComputersmm.dto.GetLastMessageCommand;
+import com.example.TheComputersmm.dto.MessageCommand;
 import com.example.TheComputersmm.dto.RemoveUserFromRoomCommand;
 import com.example.TheComputersmm.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +81,16 @@ public class RoomService {
     this.userService.save(user);
     this.save(room);
     return true;
+  }
+  
+  public MessageCommand getLastMessage(GetLastMessageCommand command){
+      Room room = this.findByName(command.roomName);
+      List<Message> messages = this.getMessages(room.getId());
+      Message lastMessage = messages.get(messages.size()-1);
+      MessageCommand message = new MessageCommand(lastMessage.getText(),
+              lastMessage.getUser().getUsername() ,lastMessage.getUser().getId(), 
+              lastMessage.getRoom().getId());
+      return message;      
   }
 
   private void deleteById(Integer id) {
