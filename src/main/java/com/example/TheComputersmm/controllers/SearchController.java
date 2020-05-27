@@ -1,6 +1,6 @@
 package com.example.TheComputersmm.controllers;
 
-import com.example.TheComputersmm.dto.ChatListCommand;
+import com.example.TheComputersmm.dto.GetUserRoomsCommand;
 import com.example.TheComputersmm.dto.SearchCommand;
 import com.example.TheComputersmm.services.SearchService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +19,7 @@ public class SearchController {
 	}
 	
 	@RequestMapping(value = "/chatss", method = RequestMethod.GET)
-	public List<ChatListCommand> chats() {
+	public List<GetUserRoomsCommand> chats() {
 		return this.searchService.chats();
 	}
 

@@ -64,15 +64,32 @@ public class UserService {
     return true;
   }
 
-  public Set<Room> getRooms(UserCommand command) {
+  public Set<RoomCommand> getRooms(UserCommand command) {
     User user = this.findByUsername(command.getUsername());
     if(user == null)
       return new HashSet<>();
-
-    return user.getRooms();
+    Set<Room> rooms = user.getRooms();
+    Set<RoomCommand> set = new HashSet<RoomCommand>();
+    for(Room room : rooms){
+        RoomCommand item= new RoomCommand(room.getId(), room.getName());
+        set.add(item);
+    }
+    return set;
   }
 
-
+ public List<UserCommand> getUsers(UserCommand command){
+      List<UserCommand> list = new ArrayList<UserCommand>();
+      List<User> users = findAll();
+      User currentUser = this.findByUsername(command.getUsername());
+      for(User user : users){
+          if(user.getUsername().equals(currentUser.getUsername())) 
+              continue;
+          UserCommand item = new UserCommand();
+          item.setUsername(user.getUsername());
+          list.add(item);
+      }
+      return list;
+  }
 
   public User findByUsername(String username) {
     return this.userRepository.findByUsername(username);
@@ -90,19 +107,7 @@ public class UserService {
     return this.userRepository.findAll();
   }
   
-  public List<UserCommand> getUsers(){
-      List<UserCommand> list = new ArrayList<UserCommand>();
-      List<User> users = findAll();
-      User currentUser = sessionBean.getCurrentUser();
-      for(User user : users){
-          if(user.getUsername().equals(currentUser.getUsername())) 
-              continue;
-          UserCommand item = new UserCommand();
-          item.setUsername(user.getUsername());
-          list.add(item);
-      }
-      return list;
-  }
+ 
 
 
 }

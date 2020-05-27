@@ -2,12 +2,12 @@ package com.example.TheComputersmm.dto;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ChatListCommand {
+public class GetUserRoomsCommand {
 	private Integer id;
 	private String name;
 	private String lastMessage;
 	
-	public ChatListCommand(@JsonProperty("id") Integer id,
+	public GetUserRoomsCommand(@JsonProperty("id") Integer id,
             @JsonProperty("name") String name, @JsonProperty("lastMessage") String lastMessage) {
 		this.id = id;
 		this.name = name;

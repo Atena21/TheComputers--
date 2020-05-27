@@ -3,7 +3,7 @@ package com.example.TheComputersmm.services;
 import com.example.TheComputersmm.beans.SessionBean;
 import com.example.TheComputersmm.domain.Room;
 import com.example.TheComputersmm.domain.User;
-import com.example.TheComputersmm.dto.ChatListCommand;
+import com.example.TheComputersmm.dto.GetUserRoomsCommand;
 import com.example.TheComputersmm.dto.SearchCommand;
 import com.example.TheComputersmm.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,11 +23,11 @@ public class SearchService {
 		this.roomRepository = roomRepository;
 	}
 	
-	public List<ChatListCommand> chats() {
+	public List<GetUserRoomsCommand> chats() {
 		if(!validateRooms(sessionBean.getCurrentUser()))
 			return null;
 		
-		List<ChatListCommand> chats = new ArrayList<ChatListCommand>();
+		List<GetUserRoomsCommand> chats = new ArrayList<GetUserRoomsCommand>();
 		
 		for(Room room : sessionBean.getCurrentUser().getRooms())
 		{
@@ -49,8 +49,8 @@ public class SearchService {
 	}
 	
 
-	private ChatListCommand convert(Room room) {
-		return new ChatListCommand(room.getId(), room.getName(), "LastMessage");
+	private GetUserRoomsCommand convert(Room room) {
+		return new GetUserRoomsCommand(room.getId(), room.getName(), "LastMessage");
 	}
 
 	private boolean validateRooms(User currentUser) {
