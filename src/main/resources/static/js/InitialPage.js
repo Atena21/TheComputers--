@@ -50,7 +50,7 @@ function loadArray(array){
     };
 
     function getRoomsByUser () {
-        fetch("/getRoomsByUser",
+        fetch("/getUserRooms",
                 {
                     method: 'GET',
                     headers: {
