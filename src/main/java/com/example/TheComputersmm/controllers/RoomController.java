@@ -57,15 +57,13 @@ public class RoomController {
     
     @RequestMapping(value = "/getLastMessage", method = RequestMethod.GET)
     @ResponseBody
-    public MessageCommand getLastMessage(@RequestBody GetLastMessageCommand command) {
+    public MessageCommand getLastMessage(@RequestBody RoomCommand command) {
         return this.roomService.getLastMessage(command);
     }
 
-    @RequestMapping(value = "/getMessages", method = RequestMethod.GET, produces = "text/plain")
+    @RequestMapping(value = "/getMessages", method = RequestMethod.GET)
     @ResponseBody
-    public List<Message> getMessages (@RequestBody RoomCommand command) {
-        return roomService.getMessages(command.getId());
+    public List<MessageCommand> getMessages (@RequestBody RoomCommand command) {
+        return roomService.getMessages(command);
     }
-
-
 }

@@ -13,14 +13,14 @@ public class User {
 
   //@UniqueElements
   private String username;
-
   private String password;
 
   @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(
-      name = "user_room",
-      joinColumns = @JoinColumn(name = "user_id"),
-      inverseJoinColumns = @JoinColumn(name = "room_id"))
+          name = "user_room",
+          joinColumns = @JoinColumn(name = "user_id"),
+          inverseJoinColumns = @JoinColumn(name = "room_id"))
+
   private Set<Room> rooms = new HashSet<>();
 
   public User() {}

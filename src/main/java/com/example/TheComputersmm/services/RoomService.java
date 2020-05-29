@@ -8,6 +8,7 @@ import com.example.TheComputersmm.repositories.RoomRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -44,9 +45,21 @@ public class RoomService {
     return true;
   }
 
-  public List<Message> getMessages(Integer roomId) {
-    return this.messageService.findAllByRoomIdOrderByCreatedDate(roomId);
+  public List<MessageCommand> getMessages(RoomCommand room) {
+    List <MessageCommand> list = new ArrayList<>();
+    List <Message> messages = messageService.findAllByRoomIdOrderByCreatedDate(room.getId());
+
+    for (Message message : messages){
+      MessageCommand item = new MessageCommand();
+      item.setContent(message.getText());
+      item.setRoomId(message.getRoom().getId());
+      item.setUserId(message.getUser().getId());
+      item.setUsername(message.getUser().getUsername());
+      list.add(item);
+    }
+    return list;
   }
+
 
   public Boolean addUser(AddUserToRoomCommand command) {
     User user = this.userService.findByUsername(command.getUsername());
@@ -78,14 +91,10 @@ public class RoomService {
     return true;
   }
   
-  public MessageCommand getLastMessage(GetLastMessageCommand command){
-      Room room = this.findByName(command.roomName);
-      List<Message> messages = this.getMessages(room.getId());
-      Message lastMessage = messages.get(messages.size()-1);
-      MessageCommand message = new MessageCommand(lastMessage.getText(),
-              lastMessage.getUser().getUsername() ,lastMessage.getUser().getId(), 
-              lastMessage.getRoom().getId());
-      return message;      
+  public MessageCommand getLastMessage(RoomCommand command){
+    List <MessageCommand> messages = this.getMessages(command);
+    MessageCommand message = messages.get(messages.size()-1);
+    return message;
   }
 
   private void deleteById(Integer id) {

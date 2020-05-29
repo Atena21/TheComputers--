@@ -20,6 +20,8 @@ public class MessageCommand
 		this.roomId = roomId;
 	}
 
+	public MessageCommand () {}
+
 	public String getContent() {
 		return content;
 	}
