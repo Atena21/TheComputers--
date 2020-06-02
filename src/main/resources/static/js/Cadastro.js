@@ -16,13 +16,17 @@ function cadastrar() {
     const pass2 = document.getElementById("pass2").value;
 
     const cadastrarCommand = {
-        username: name,
+        username: name,s": 404,
+    "error": "Not Found",
+    "message": "No message available",
+    "path": "/newUser"
+}
         password: pass1,
         retype: pass2
     };
 
 
-    fetch("/newuser",{
+    fetch("/newUser",{
         method: 'POST',
         body: JSON.stringify(cadastrarCommand),
         headers: {
