@@ -13,7 +13,7 @@ spring:
   datasource:
     url: "jdbc:postgresql://127.0.0.1:5432/postgres?currentSchema=chat"
     username: postgres
-    password: Magestade12
+    password: postgres
   jpa:
     database: postgresql
     show-sql: true

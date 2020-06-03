@@ -30,8 +30,12 @@ public class LoginController {
   }
 
   @RequestMapping(value = "/logout", method = RequestMethod.POST, produces = "text/plain")
-  public void logout() {
+  public String logout() {
     this.loginService.logout();
+    
+    if(this.loginService.isLogged())
+    	return "LOGGED";
+    return "NOT_LOGGED";
 
   }
 }
