@@ -50,7 +50,7 @@ public class UserController {
     return this.userService.getRooms(command);
   }
   
-  @RequestMapping(value = "/getUsers", method = RequestMethod.GET)
+  @RequestMapping(value = "/getUsers", method = RequestMethod.POST)
   @ResponseBody
   public List<UserCommand> getUsers(@RequestBody UserCommand command) {
     return this.userService.getUsers(command);
