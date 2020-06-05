@@ -44,7 +44,7 @@ public class UserController {
 //    return String.valueOf(updated);
 //  }
 
-  @RequestMapping(value = "/getUserRooms", method = RequestMethod.GET)
+  @RequestMapping(value = "/getUserRooms", method = RequestMethod.POST)
   @ResponseBody
   public Set<RoomCommand> getUserRooms(@RequestBody UserCommand command) {
     return this.userService.getRooms(command);

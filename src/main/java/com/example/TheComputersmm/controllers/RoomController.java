@@ -55,7 +55,7 @@ public class RoomController {
         return String.valueOf(removed);
     }
     
-    @RequestMapping(value = "/getLastMessage", method = RequestMethod.GET)
+    @RequestMapping(value = "/getLastMessage", method = RequestMethod.POST)
     @ResponseBody
     public MessageCommand getLastMessage(@RequestBody RoomCommand command) {
         return this.roomService.getLastMessage(command);
