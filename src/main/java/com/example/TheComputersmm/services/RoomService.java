@@ -17,6 +17,7 @@ public class RoomService {
   private RoomRepository roomRepository;
   private MessageService messageService;
   private UserService userService;
+  private MessageCommand nullMessage = new MessageCommand ("","",0,0);
 
   @Autowired
   public RoomService(
@@ -57,6 +58,9 @@ public class RoomService {
       item.setUsername(message.getUser().getUsername());
       list.add(item);
     }
+    if (list.size() == 0) {
+      list.add(nullMessage);
+    }
     return list;
   }
 
@@ -93,7 +97,7 @@ public class RoomService {
   
   public MessageCommand getLastMessage(RoomCommand command){
     List <MessageCommand> messages = this.getMessages(command);
-    MessageCommand message = messages.get(messages.size()-1);
+    MessageCommand message = messages.size() == 0? nullMessage : messages.get(messages.size()-1);
     return message;
   }
 
