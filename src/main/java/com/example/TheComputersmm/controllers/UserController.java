@@ -1,5 +1,6 @@
 package com.example.TheComputersmm.controllers;
 
+import com.example.TheComputersmm.domain.User;
 import com.example.TheComputersmm.dto.*;
 import com.example.TheComputersmm.services.UserService;
 import java.util.List;
@@ -61,6 +62,13 @@ public class UserController {
   public String removeUser(@RequestBody SendMessageCommand command) {
     Boolean sent = this.userService.sendMessage(command);
     return String.valueOf(sent);
+  }
+  
+  @RequestMapping(value = "/getUserId", method = RequestMethod.POST, produces = "text/plain")
+  @ResponseBody
+  public String userID (@RequestBody UserCommand command) {
+    User user = this.userService.findByUsername(command.getUsername());
+    return String.valueOf(user.getId());
   }
 
 

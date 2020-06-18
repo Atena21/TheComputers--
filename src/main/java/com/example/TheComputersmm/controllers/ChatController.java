@@ -20,7 +20,7 @@ public class ChatController {
 		this.chatService = chatService;
 	}
 	
-	@RequestMapping(value = "/chatInfo", method = RequestMethod.GET)
+	@RequestMapping(value = "/chatInfo", method = RequestMethod.POST)
 	public ChatInfoCommand getChatInfo() {
 		return chatService.getChatInfo();
 	}
