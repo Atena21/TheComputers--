@@ -32,6 +32,12 @@ public class RoomController {
         Boolean created = this.roomService.create(command);
         return String.valueOf(created);
     }
+    
+    @RequestMapping(value = "/getRoom", method = RequestMethod.POST)
+    @ResponseBody
+    public RoomCommand getRoom(@RequestBody CreateRoomCommand command) {
+        return this.roomService.getRoom(command);
+    }
 
     @RequestMapping(value = "/removeRoom", method = RequestMethod.POST, produces = "text/plain")
     @ResponseBody

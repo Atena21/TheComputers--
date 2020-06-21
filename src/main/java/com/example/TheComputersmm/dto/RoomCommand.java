@@ -13,7 +13,7 @@ public class RoomCommand {
         this.name = name;
     }
 
-
+    
     public Integer getId() {
         return id;
     }

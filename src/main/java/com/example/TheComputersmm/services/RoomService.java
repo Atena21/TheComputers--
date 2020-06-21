@@ -36,6 +36,12 @@ public class RoomService {
     }
     return false;
   }
+  
+  public RoomCommand getRoom(CreateRoomCommand command){
+      Room room = this.findByName(command.getRoomName());      
+      RoomCommand roomCommand = new RoomCommand(room.getId(), room.getName());
+      return roomCommand;
+  }
 
   public boolean delete(DeleteRoomCommand command) {
     Room room = this.findByName(command.getRoomName());
