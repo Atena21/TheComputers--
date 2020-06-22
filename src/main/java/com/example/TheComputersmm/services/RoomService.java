@@ -23,10 +23,12 @@ public class RoomService {
 
   @Autowired
   public RoomService(
-      RoomRepository roomRepository, MessageService messageService, UserService userService) {
+      RoomRepository roomRepository, MessageService messageService, 
+          UserService userService, SimpMessagingTemplate simpMessagingTemplate ) {
     this.roomRepository = roomRepository;
     this.messageService = messageService;
     this.userService = userService;
+    this.simpMessagingTemplate = simpMessagingTemplate;
   }
 
   public boolean create(CreateRoomCommand command) {
