@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import org.springframework.messaging.simp.SimpMessagingTemplate;
 
 @Service
 public class RoomService {
@@ -17,6 +18,7 @@ public class RoomService {
   private RoomRepository roomRepository;
   private MessageService messageService;
   private UserService userService;
+  private SimpMessagingTemplate simpMessagingTemplate;
   private MessageCommand nullMessage = new MessageCommand ("","",0,0);
 
   @Autowired
@@ -79,8 +81,10 @@ public class RoomService {
 
     user.getRooms().add(room);
     room.getUsers().add(user);
+    RoomCommand roomCommand = new RoomCommand(room.getId(), room.getName());
 
     this.userService.save(user);
+    this.simpMessagingTemplate.convertAndSend("/queue/" + user.getUsername(), roomCommand);
     this.save(room);
     return true;
   }
