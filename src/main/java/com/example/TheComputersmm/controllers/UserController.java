@@ -57,12 +57,13 @@ public class UserController {
     return this.userService.getUsers(command);
   }
 
-  @RequestMapping(value = "/sendMessage", method = RequestMethod.POST, produces = "text/plain")
-  @ResponseBody
-  public String removeUser(@RequestBody SendMessageCommand command) {
-    Boolean sent = this.userService.sendMessage(command);
-    return String.valueOf(sent);
-  }
+  //rota de teste
+//  @RequestMapping(value = "/sendMessage", method = RequestMethod.POST, produces = "text/plain")
+//  @ResponseBody
+//  public String removeUser(@RequestBody SendMessageCommand command) {
+//    Boolean sent = this.userService.sendMessage(command);
+//    return String.valueOf(sent);
+//  }
   
   @RequestMapping(value = "/getUserId", method = RequestMethod.POST, produces = "text/plain")
   @ResponseBody

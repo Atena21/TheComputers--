@@ -70,14 +70,15 @@ public class UserService {
     return true;
   }
   
-  public boolean sendMessage(SendMessageCommand command){
-      Room room = this.roomRepository.findByName(command.getRoomName());
-      User user = this.findByUsername(command.getUsername());
-      if(room == null || user == null) return false;
-      MessageCommand message = new MessageCommand(command.getText(), command.getUsername(), user.getId(), room.getId());
-      messageService.receiveMessage(message);
-      return true;      
-  }
+  //metodo usado pela rota de teste
+//  public boolean sendMessage(SendMessageCommand command){
+//      Room room = this.roomRepository.findByName(command.getRoomName());
+//      User user = this.findByUsername(command.getUsername());
+//      if(room == null || user == null) return false;
+//      MessageCommand message = new MessageCommand(command.getText(), command.getUsername(), user.getId(), room.getId());
+//      messageService.receiveMessage(message);
+//      return true;      
+//  }
 
   public Set<RoomCommand> getRooms(UserCommand command) {
     User user = this.findByUsername(command.getUsername());
