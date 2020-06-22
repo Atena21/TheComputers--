@@ -11,9 +11,9 @@ spring:
       enabled: false
       
   datasource:
-    url: "jdbc:postgresql://localhost:5432/postgres?currentSchema=chat"
+    url: "jdbc:postgresql://35.247.198.109:5432/postgresql?currentSchema=chat"
     username: postgres
-    password: Magestade12
+    password: postgres
   jpa:
     database: postgresql
     show-sql: true
